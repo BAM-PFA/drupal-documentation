@@ -14,115 +14,89 @@
 
 
 
-    function showInfo(data, tabletop) {
+    function loadData(data, tabletop) {
+
     	newHTML = [];
+
     	dataObj = data;
 
-    	generateTitles();
-    	generateDetails();
-    	
+    	// get the sheet that corresponds to a matching div ID on current page
+    	sheetName = parseSheets(tabletop);
+    	//use the sheetname to get appropriate data from tabletop model
+    	newHTML = getDataFromSheet(sheetName);
+
+    	//write the stuff
+    	document.getElementById(sheetName).innerHTML = newHTML.join('');
+    }
+
+    function getDataFromSheet(sheetName){
+
+    	generateTitles(sheetName);
+    	generateDetails(sheetName);
+
     	// create array of titles with HTML
     	$.each(titles, function(i,v) {
     		newHTML.push('<h3>' + v + '</h3>');
+    		newHTML.push('<pre> ' + machineName[i] + '</pre>');
     		newHTML.push('<p>' + description[i] + '</p>');
     		newHTML.push('<ul>');
-    		newHTML.push('<li><strong>Machine Name</strong>: ' + machineName[i] + '</li>');
     		newHTML.push('<li><strong>Drupal Field Type</strong>: ' + drupalFieldType[i] + '</li>');
     		newHTML.push('<li><strong>Example Values</strong>: ' + exampleValues[i] + '</li>');
     		newHTML.push('</ul>');
     	});
 
-    	$('#afObjectFields').html(newHTML.join(''));
-
-
+    	return newHTML;
     }
 
     // Returns an array of drupal field names 
 
-    function generateTitles( ) {
+    function generateTitles(sheetName) {
+
+    	console.log();
+
     	titles = [];
    
-    	for(var i in dataObj) {
-    		titles.push(dataObj[i]['Field Name']);
+    	for(var i in dataObj[sheetName]['elements']) {
+    		titles.push(dataObj[sheetName]['elements'][i]['Field Name']);
     	}   
 
     	return titles;
     }
 
-    function generateDetails( ) {
+    function generateDetails(sheetName) {
 
     	machineName = [];
     	drupalFieldType = [];
     	description = [];
     	exampleValues = [];
 
-    	for(var i in dataObj) {
-    		machineName.push(dataObj[i]['Machine Name']);
-    		drupalFieldType.push(dataObj[i]['Drupal Field Type']);
-    		description.push(dataObj[i]['Description']);
-    		exampleValues.push(dataObj[i]['Example Values']);
+    	for(var i in dataObj[sheetName]['elements']) {
+    		machineName.push(dataObj[sheetName]['elements'][i]['Machine Name']);
+    		drupalFieldType.push(dataObj[sheetName]['elements'][i]['Drupal Field Type']);
+    		description.push(dataObj[sheetName]['elements'][i]['Description']);
+    		exampleValues.push(dataObj[sheetName]['elements'][i]['Example Values']);
     	}
 
     	return machineName, drupalFieldType, description, exampleValues;
-    	
     }
 
+    function parseSheets(tabletop) {
 
+		$.each(tabletop.model_names, function(i,v) {
+    		if(document.getElementById(v)) {
+    			sheetName = v;
+    		}
+    	});
 
-    function generateContent(){
-        var table = document.createElement("table");
-        var head  = generateTableHeader();
-        table.appendChild(head);
-        var body  = generateTableBody();
-        table.appendChild(body);
-        return table;
-    }
-
-    function generateTableHeader(){
-        var d         = dataObj[0];
-        var tHead     = document.createElement("thead");
-        var colHeader = [];
-        $.each(d, function( index, value){
-            colHeader.push(index);
-        });
-        var row = generateRow(colHeader, 'th');
-        tHead.appendChild(row);
-        return tHead;
-    }
-
-    // this can be factorized with generateTableHeader
-    function generateTableBody(){
-        var tBody = document.createElement("tbody");
-        $.each(dataObj, function( index, value ){
-            var rowVals = [];
-            $.each(value, function(colnum, colval){
-                rowVals.push(colval);
-            });
-            var row = generateRow(rowVals);
-            tBody.appendChild(row);
-        });
-        return tBody;
-    }
-
-    function generateRow(headersArray, cellTag){
-        cellTag = typeof cellTag !== 'undefined' ? cellTag : 'td';
-        var row = document.createElement("tr");
-        $.each(headersArray, function( index, value){
-            if( value != "rowNumber"){
-                var cell     = document.createElement(cellTag);
-                var cellText = document.createTextNode(value);
-                cell.appendChild(cellText);
-                row.appendChild(cell);
-            }
-        });
-        return row;
+    	return sheetName;
     }
 
     return {
         init: function() {
-                Tabletop.init( { key: sharedDocUrl  ,
-                         callback: showInfo,
-                         simpleSheet: true } );
+                Tabletop.init( { 
+                	key: sharedDocUrl,
+                    callback: loadData,
+                    simpleSheet: false } );
 
         }
     };
