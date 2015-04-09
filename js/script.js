@@ -17,6 +17,7 @@
     function loadData(data, tabletop) {
 
     	newHTML = [];
+        menuHTML = []
 
     	dataObj = data;
 
@@ -24,11 +25,15 @@
     	sheetName = parseSheets(tabletop);
     	//use the sheetname to get appropriate data from tabletop model
     	newHTML = getDataFromSheet(sheetName);
+        menuHTML = generateMenu(sheetName);
 
     	//write the stuff
     	document.getElementById(sheetName).innerHTML = newHTML.join('');
+        menuContainer = sheetName + '-menu';
+        document.getElementById(menuContainer).innerHTML = menuHTML.join('');
     }
 
+    // gets the data from various functions and creates new HTML
     function getDataFromSheet(sheetName){
 
     	generateTitles(sheetName);
@@ -36,8 +41,8 @@
 
     	// create array of titles with HTML
     	$.each(titles, function(i,v) {
-    		newHTML.push('<h3>' + v + '</h3>');
-    		newHTML.push('<pre> ' + machineName[i] + '</pre>');
+    		newHTML.push('<h3 id="' + machineName[i] + '">' + v + '</h3>');
+    		newHTML.push('<code> ' + machineName[i] + '</code>');
     		newHTML.push('<p>' + description[i] + '</p>');
     		newHTML.push('<ul>');
     		newHTML.push('<li><strong>Drupal Field Type</strong>: ' + drupalFieldType[i] + '</li>');
@@ -47,6 +52,20 @@
 
     	return newHTML;
     }
+
+    function generateMenu(sheetName){
+
+        generateTitles(sheetName);
+        generateDetails(sheetName);
+
+        // create array of titles with HTML
+        $.each(titles, function(i,v) {
+            console.log(i);
+            menuHTML.push('<a href="#' + machineName[i] + '">' + v + '</a><br />');
+        });
+
+        return menuHTML;
+    }    
 
     // Returns an array of drupal field names 
 
