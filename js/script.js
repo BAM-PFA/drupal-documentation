@@ -42,12 +42,13 @@
     	// create array of titles with HTML
     	$.each(titles, function(i,v) {
     		newHTML.push('<h3 id="' + machineName[i] + '">' + v + '</h3>');
-    		newHTML.push('<code> ' + machineName[i] + '</code>');
+    		newHTML.push('<strong>Machine Name:</strong> <code> ' + machineName[i] + '</code>');
     		newHTML.push('<p>' + description[i] + '</p>');
     		newHTML.push('<ul>');
     		newHTML.push('<li><strong>Drupal Field Type</strong>: ' + drupalFieldType[i] + '</li>');
     		newHTML.push('<li><strong>Example Values</strong>: ' + exampleValues[i] + '</li>');
     		newHTML.push('</ul>');
+            newHTML.push('<p>' + notes[i] + '</p><hr />');
     	});
 
     	return newHTML;
@@ -88,15 +89,18 @@
     	drupalFieldType = [];
     	description = [];
     	exampleValues = [];
+        notes = [];
 
     	for(var i in dataObj[sheetName]['elements']) {
     		machineName.push(dataObj[sheetName]['elements'][i]['Machine Name']);
     		drupalFieldType.push(dataObj[sheetName]['elements'][i]['Drupal Field Type']);
     		description.push(dataObj[sheetName]['elements'][i]['Description']);
     		exampleValues.push(dataObj[sheetName]['elements'][i]['Example Values']);
-    	}
+    	    notes.push(dataObj[sheetName]['elements'][i]['Notes']);
 
-    	return machineName, drupalFieldType, description, exampleValues;
+        }
+
+    	return machineName, drupalFieldType, description, exampleValues, notes;
     }
 
     function parseSheets(tabletop) {
