@@ -63,6 +63,7 @@ li {
     margin-left: auto;
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
+    height: 100%;
     @extend %clearfix;
 
     @include media-query($on-laptop) {

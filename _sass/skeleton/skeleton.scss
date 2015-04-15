@@ -145,9 +145,9 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
 @media (min-width: 550px) {
   h1 { font-size: 5.0rem; }
   h2 { font-size: 4.2rem; }
-  h3 { font-size: 3.6rem; }
-  h4 { font-size: 3.0rem; }
-  h5 { font-size: 2.4rem; }
+  h3 { font-size: 3.0rem; }
+  h4 { font-size: 2.4rem; }
+  h5 { font-size: 2.0rem; }
   h6 { font-size: 1.5rem; }
 }
 
@@ -158,9 +158,13 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #1EAEDB; }
+  color: #008CCC; 
+  text-decoration: none;
+}
 a:hover {
-  color: #0FA0CE; }
+  color: #0FA0CE; 
+  text-decoration: underline;
+}
 
 
 /* Buttons
