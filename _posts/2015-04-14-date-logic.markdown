@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Dates
-date: {}
-categories: null
-published: true
+date: 2015-04-15 16:19:37
+categories: Documentation
+summary: Description of various date fields, and the logic dictating their use throughout the site
 ---
 
 Most content types store dates in the same way, across an identical set of fields. These fields are intended to provide the ability to properly store, search/filter, and display dates as required by site functionality. 
@@ -60,5 +60,3 @@ A boolean (i.e., true/false) to describe whether the dates values are 'circa' or
 
 Field name: **Circa**  
 Machine name: <code>field_dates_circa</code>
-
-test

@@ -2,7 +2,8 @@
 layout: post
 title:  "News Functionality"
 date:   2015-04-15 16:19:37
-categories:
+categories: Documentation
+summary: Plan for news functionality
 ---
 
 This document describes how News should be entered into the site, and how it will appear to the public.

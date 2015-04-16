@@ -13,9 +13,10 @@ body {
     border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
-
-    // Positioning context for the mobile navigation icon
-    position: relative;
+    position: fixed;
+    width: 100%;
+    z-index: 200;
+    background-color: #fff;
 }
 
 .site-title {
@@ -99,8 +100,8 @@ body {
  * Page content
  */
 .page-content {
-    padding: $spacing-unit 0;
-        height: 100%;
+    height: 100%;
+    padding-top: 100px;
 }
 
 .post {
@@ -117,7 +118,6 @@ body {
 }
 
 .post-meta {
-    font-size: $small-font-size;
     color: $grey-color;
 }
 
@@ -144,6 +144,10 @@ body {
     @include media-query($on-laptop) {
         font-size: 36px;
     }
+}
+
+.post-summary {
+    font-size: 2rem;
 }
 
 

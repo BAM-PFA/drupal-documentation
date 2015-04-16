@@ -41,7 +41,7 @@
 
     	// create array of titles with HTML
     	$.each(titles, function(i,v) {
-    		newHTML.push('<h3 id="' + machineName[i] + '">' + v + '</h3>');
+    		newHTML.push('<h3><a name=' + machineName[i] + '></a>' + v + '</h3>');
     		newHTML.push('<strong>Machine Name:</strong> <code> ' + machineName[i] + '</code>');
     		newHTML.push('<p>' + description[i] + '</p>');
     		newHTML.push('<ul>');

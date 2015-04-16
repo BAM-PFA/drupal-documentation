@@ -3,7 +3,7 @@ layout: post
 title:  "Cinefiles Permissions"
 date:   2015-04-15 16:19:37
 summary: "Description of various use restrictions associated with Cinefiles content"
-categories:
+categories: Documentation
 ---
 
 CineFiles Documentation have a series of "Access Codes" that indicate who is able to access the documents online. There are 5 levels of restriction, although looking through the database it looks like only 3 are used. The list below details these.
