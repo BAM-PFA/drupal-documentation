@@ -8,7 +8,7 @@ summary: Describes the functionality and display of an In-person component of an
 
 The "In-person component" of an event describes the portion of an event that involves a live component, such as a guest speaker, Q&A with a director, etc. This information displays on the event page itself, as well as elsewhere on the site.
 
-On an event/screening page, the In-person component information is stored in a field collection (<code>field_in_person_component</code>) that contains the majority of necessary information for display. Other information is brought in from the record of the Related Person.
+On an event/screening page, the In-person component information is stored in a field collection (<code>field_in_person_component</code>) that contains the majority of necessary information for display. Other information is brought in from the record of the Related Person. 
 
 In-person Components also have a marketing layer, which will be used when it is being referenced elsewhere other than the event/screening page to which it belongs.
 
@@ -22,5 +22,6 @@ The In-person Component will appear:
 * On the homepage, under "In Person"
 * On the "In Person" page
 * On the page of the person whos is appearing
+* ???
 
-
+TO DO: add example of how to display In-person info in various use cases.

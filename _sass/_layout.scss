@@ -17,6 +17,9 @@ body {
     width: 100%;
     z-index: 200;
     background-color: #fff;
+    .wrapper {
+        max-width: 110rem;
+    }
 }
 
 .site-title {
@@ -102,6 +105,8 @@ body {
 .page-content {
     height: 100%;
     padding-top: 100px;
+    max-width: 110rem;
+    margin: 0 auto;
 }
 
 .post {
@@ -148,6 +153,9 @@ body {
 
 .post-summary {
     font-size: 2rem;
+    // border: 1px solid #E1E1E1;
+    // border-radius: 4px;
+    // padding: 2rem;
 }
 
 
