@@ -35,8 +35,16 @@ layout: default
 			</ul>
 		</div>
 		<div class="six columns">
+			<h3>General Info</h3>
+			<ul>
+				{% for page in site.pages %}
+					{% if page.categories contains 'general' %}
+						<li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+					{% endif %}
+				{% endfor %}
+			</ul>		
 			<h3>Site logic and functionality</h3>
-			<p>Documentation for assorted site logic and functionality.</p>
+			<p>Documentation for assorted site logic and functionality</p>
 			<ul>
 				{% assign sorted_posts = (site.categories['documentation'] | sort: 'title') %}
 				{% for post in sorted_posts | sort: 'title' %}
