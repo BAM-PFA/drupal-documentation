@@ -8,21 +8,41 @@ layout: default
 	<hr />
 	<div class="row">
 		<div class="six columns">
+			<h3> Content Type Overview </h3>
+			<p>Overview of each major content type, with links to relevant documentation</p>
+			<ul>
+				{% assign sorted_posts = (site.categories['content-types'] | sort: 'title') %}
+				{% for post in sorted_posts | sort: 'title' %}
+					<li><a class="page-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+				{% endfor %}
+				<li>Exhibition/Film Series</li>
+				<li>Event Series</li>
+				<li>Documentation</li>
+				<li>Person</li>
+			</ul>			
 			<h3>Content Type Fields</h3>
-			{% for page in site.pages %}
-				{% if page.title %}
-					<h4><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></h4>
-					<p>{{ page.summary }}</p>
-				{% endif %}
-			{% endfor %}
+			<p>List of all of the fields for each content type</p>
+			<ul>
+				{% for page in site.pages %}
+					{% if page.categories contains 'fields' %}
+						<li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+					{% endif %}
+				{% endfor %}
+				<li>Exhibition/Film Series</li>
+				<li>Event Series</li>
+				<li>Documentation</li>
+				<li>Person</li>
+			</ul>
 		</div>
 		<div class="six columns">
 			<h3>Site logic and functionality</h3>
-			{% assign sorted_posts = (site.categories['documentation'] | sort: 'title') %}
-			{% for post in sorted_posts | sort: 'title' %}
-				<h4><a class="page-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
-				<p>{{ post.summary }}</p>
-			{% endfor %}
+			<p>Documentation for assorted site logic and functionality.</p>
+			<ul>
+				{% assign sorted_posts = (site.categories['documentation'] | sort: 'title') %}
+				{% for post in sorted_posts | sort: 'title' %}
+					<li><a class="page-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><br />{{ post.summary }}</li>
+				{% endfor %}
+			</ul>
 		</div>
 	</div>
 </div>
