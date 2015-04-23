@@ -4,7 +4,9 @@ title:  "In Person"
 date:   2015-04-15 16:19:37
 categories: blocks
 image: in-person.jpg
-locations: Exhibition/Film Series
+locations: 
+- Exhibition/Film Series
+- Event/Film Series
 ---
 
 The "In-Person" block should show upcoming "In-Person" event/screening that are part of the exhibition/series.

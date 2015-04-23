@@ -7,6 +7,6 @@ image: walkthrough.jpg
 locations: Exhibition/Film Series
 ---
 
-The "Walkthrough Block displays on exhibition pages that have a video walthrough created.
+The "Walkthrough" Block displays on exhibition pages that have a video walthrough created.
 
 Need to determine where video is hosted, and whether playback happens in the block, opens in a modal, or links offsite (for youtube).

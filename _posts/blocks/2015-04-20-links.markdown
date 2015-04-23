@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "Links"
+date:   2015-04-15 16:19:37
+categories: blocks
+image: links.jpg
+locations: 
+- Exhibition/Film Series
+- Event/Film Series
+---
+
+The "Links" block provides links to non-BAM/PFA sites/resources that might be of interest to the viewer, relating to the current content.
