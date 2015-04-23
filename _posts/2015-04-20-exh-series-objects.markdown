@@ -1,23 +1,22 @@
 ---
 layout: post
-title:  "Event and Film Screening"
+title:  "Exhibition and Film Series "
 date:   2015-04-15 16:19:37
 categories: Content-types
 ---
 
-The "Event/Film Screening Object" content type is for records that represent an actual event that is taking place, most often at the museum. Film Screenings are the individual events that comprise a "Film Series", and an "Event" is the equivalent for "Event Series".
+The "Exhibition/Film Series" content type is for records that represent a specific Exhibition or Film Series. The main difference between the two is that a Film Series has many child Film Screenings, whereas an Exhibition has many child Art Objects.
 
-There are three types of Film Screenings: Single Feature, Double Feature, and Program of Shorts, which all vary slightly in how they are displayed, and what data needs to be entered for each one.
 
 ### Sidebar Items
 
-* Plan Your Visit
-* Series - Upcoming 
+* Walkthrough
 * In Person
-* Related Exhibitions
+* Plan Your Visit
+* Related Exhibitions & Series
+* Shop
 * Links
 * Partners
-* Promos
 
 ### Documentation
 

@@ -10,28 +10,28 @@ body {
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
+    border-top: 5px solid $bam-blue;
     position: fixed;
     width: 100%;
     z-index: 200;
-    background-color: #fff;
+    background-color: $bam-blue-light;
     .wrapper {
         max-width: 110rem;
     }
 }
 
 .site-title {
-    font-size: 26px;
+    font-size: 20px;
     line-height: 56px;
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
 
     &,
-    &:visited {
-        color: $grey-color-dark;
+    &:visited,
+    &:hover {
+            color: $bam-blue;
+            text-decoration: none;
     }
 }
 

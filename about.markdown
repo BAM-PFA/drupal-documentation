@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About This Site
-permalink: /about/
+permalink: /about-documentation/
 ---
 
 This site seeks to document the entirety of the new BAM/PFA website, including information for developers, content editors, and anyone else interested.

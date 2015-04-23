@@ -1,0 +1,27 @@
+---
+layout: page
+title: Blocks
+permalink: /blocks/
+summary: A bunch of blocks
+categories: general
+---
+
+<div class="container">
+
+	{% for block in site.categories.blocks %}
+		<div class="row">
+			<div class="four columns">
+				<img src="{{ site.baseurl }}/assets/design/blocks/{{block.image}}" />
+			</div>
+			<div class="eight columns">
+				<h4>{{ block.title }}</h4>
+				{{block.content}}
+				Appears on: {{block.locations}}	
+			</div>
+		</div>
+		<hr />
+	{% endfor %}
+</div>
+
+
+
