@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Walkthrough"
+slug: walkthrough
 date:   2015-04-15 16:19:37
 categories: blocks
 image: walkthrough.jpg

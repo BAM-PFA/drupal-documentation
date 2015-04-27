@@ -104,9 +104,11 @@ body {
  */
 .page-content {
     height: 100%;
-    padding-top: 100px;
     max-width: 110rem;
     margin: 0 auto;
+    .wrapper {
+        padding-top: 100px;
+    }
 }
 
 .post {
@@ -163,4 +165,12 @@ body {
 .textual-graphic {
     @include shadow;
     padding: 20px;
+}
+
+h4.block-title:before {
+    display: block;
+    content: " ";
+    margin-top: -100px;
+    height: 100px;
+    visbility: hidden;
 }

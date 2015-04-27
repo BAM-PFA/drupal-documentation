@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Plan Your Visit"
+slug: plan-your-visit
 date:   2015-04-15 16:19:37
 categories: blocks
 image: plan-your-visit.jpg

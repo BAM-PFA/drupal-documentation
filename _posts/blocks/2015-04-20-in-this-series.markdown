@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "In This Series"
+slug: in-this-series
 date:   2015-04-15 16:19:37
 categories: blocks
 image: in-this-series.jpg

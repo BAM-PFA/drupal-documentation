@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Related Exhibitions"
+slug: related-exhibitions
 date:   2015-04-15 16:19:37
 categories: blocks
 image: related-exhibitions.jpg
